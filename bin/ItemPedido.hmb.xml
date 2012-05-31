@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="br.com.tg.entidades.ItemPedido" table="ITEM_PEDIDO" lazy="false">
+		<id name="id" column="ID" >
+<!--			<generator class="native">-->
+<!--				<param name="sequence">GEN_ITEM_PEDIDO_ID</param>-->
+<!--			</generator>-->
+		</id>
+		
+<!--		<many-to-one name="pedidoPai" column="PEDIDO_ID" not-null="true"/>-->
+<!--		<join table="ITEM_PEDIDO_PLOTAGEM" optional="true">-->
+<!--			<key column="ITEM_PEDIDO_ID" unique="true" />-->
+<!--			<many-to-one name="plotagem" column="PLOTAGEM_ID" -->
+<!--				not-null="true"	lazy="false" cascade="none" update="false" />-->
+<!---->
+<!--		</join>-->
+		<many-to-one name="plotagem" column="PLOTAGEM_ID"
+			class="br.com.tg.entidades.Plotagem" cascade="none" update="false"
+			lazy="false" />
+					
+<!--		<property name="plantaId" column="PLANTA_ID" />-->
+		<property name="plantaDescricao" column="PLANTA_DESCRICAO" />
+		<property name="quantidade" column="QUANTIDADE" />
+		<property name="valorUnitario" column="VALOR_UNITARIO" />
+		<property name="valorTotal" column="VALOR_TOTAL" />
+	</class>
+</hibernate-mapping>  

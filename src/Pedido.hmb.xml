@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="br.com.tg.entidades.Pedido" table="PEDIDO" lazy="false">
+		<id name="id" column="ID" type="java.lang.Integer" />
+		
+		<set name="itensPedido" lazy="false" table="PEDIDO_ITEM_PEDIDO" cascade="all,delete-orphan">
+			<key column="PEDIDO_ID" />
+			<many-to-many class="br.com.tg.entidades.ItemPedido" column="ITEM_PEDIDO_ID" />
+		</set>
+		
+		<many-to-one name="pessoaPai" column="PESSOA_ID"
+			class="br.com.tg.entidades.Pessoa" cascade="none" update="true"
+			lazy="false" />
+
+		<property name="nomeProjeto" column="NOME_PROJETO" />
+		<property name="nomeSolicitante" column="NOME_SOLICITANTE" />
+		<property name="taxaEntrega" column="TAXA_ENTREGA" />
+		<property name="valorTotal" column="VALOR_TOTAL" />
+
+		<many-to-one name="statusPedido" column="STATUS_PEDIDO_ID"
+			class="br.com.tg.entidades.StatusPedido" cascade="none"
+			update="true" lazy="false" />
+
+		<property name="dataEmissao" column="DATA_EMISSAO" update="true"/>		
+		<property name="dataCadastro" column="DATA_CADASTRO" update="false"/>
+
+		<many-to-one name="usuarioCadastro" column="USUARIO_CADASTRO_ID"
+			class="br.com.tg.entidades.Usuario" cascade="none" update="false"
+			lazy="false" />
+
+		<property name="dataAlteracao" column="DATA_ALTERACAO" />
+
+		<many-to-one name="usuarioAlteracao" column="USUARIO_ALTERACAO_ID"
+			class="br.com.tg.entidades.Usuario" cascade="none" update="true"
+			lazy="false" />
+
+	</class>
+</hibernate-mapping>  

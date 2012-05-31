@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="br.com.tg.entidades.Plotagem" table="PLOTAGEM" lazy="false">
+		<id name="id" column="ID" type="java.lang.Integer" unsaved-value="0">
+			<generator class="increment">
+				<param name="sequence">GEN_PLOTAGEM_ID</param>
+			</generator>
+		</id>
+		<property name="descricao" column="DESCRICAO" not-null="true" type="java.lang.String"/>
+		<property name="unidade" column="UNIDADE" not-null="true" type="java.lang.String"/>
+		<property name="valor" column="VALOR" not-null="true" type="java.lang.Float"/>
+		<property name="dataCadastro" column="DATA_CADASTRO" update="false"/>
+
+		<many-to-one name="usuarioCadastro" column="USUARIO_CADASTRO_ID"
+			class="br.com.tg.entidades.Usuario" cascade="none" update="false"
+			lazy="false" />
+
+		<property name="dataAlteracao" column="DATA_ALTERACAO" />
+
+		<many-to-one name="usuarioAlteracao" column="USUARIO_ALTERACAO_ID"
+			class="br.com.tg.entidades.Usuario" cascade="none" update="true"
+			lazy="false" />
+	</class>
+	
+</hibernate-mapping>  

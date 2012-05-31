@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatório de Pessoas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="505"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{logo}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="totalPessoas" class="java.lang.Integer"/>
+	<parameter name="ordenacao" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="filtros" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA['Não há filtros']]></defaultValueExpression>
+	</parameter>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="cidade" class="java.lang.String"/>
+	<field name="uf" class="java.lang.String"/>
+	<field name="tipoPessoa" class="java.lang.String"/>
+	<field name="statusPessoa" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="112" y="10" width="259" height="14"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ARTPLOT - SERV. DE ARQUITETURA E IMPRESSÕES TECNICAS ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="47" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="475" y="32" width="20" height="11"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="9" y="10" width="91" height="33"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="437" y="10" width="118" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[email : arquivos@artplot.com.br]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="23" width="152" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[R. Sá e Souza N° 878 - SL 1801 TERREO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="495" y="32" width="58" height="11"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[br.com.tg.gui.util.CalendarFormatter.formatDate(java.util.Calendar.getInstance())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="112" y="32" width="171" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fone : (81) 3461-2543 / 9146-5000 / 9198-6636]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="31">
+			<staticText>
+				<reportElement x="0" y="0" width="58" height="14"/>
+				<textElement/>
+				<text><![CDATA[Ordenação:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="58" y="0" width="259" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ordenacao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="16" width="32" height="14"/>
+				<textElement/>
+				<text><![CDATA[Filtros:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="32" y="16" width="285" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{filtros}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="42" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="42" y="0" width="306" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="0" width="100" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Cidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="0" width="22" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[UF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="0" width="42" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="512" y="0" width="43" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Situação]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="42" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="42" y="0" width="306" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="348" y="0" width="100" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="448" y="0" width="22" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{uf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="42" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tipoPessoa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="512" y="0" width="43" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{statusPessoa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="495" y="7" width="58" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{totalPessoas}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="2" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="410" y="7" width="85" height="15"/>
+				<textElement/>
+				<text><![CDATA[Total de Pessoas:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

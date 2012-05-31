@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatório de Plotagens" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="184"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="totalPlotagens" class="java.lang.Integer"/>
+	<parameter name="ordenacao" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="filtros" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA['Não há filtros']]></defaultValueExpression>
+	</parameter>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="descricao" class="java.lang.String"/>
+	<field name="unidade" class="java.lang.String"/>
+	<field name="valor" class="java.lang.Float"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="475" y="29" width="20" height="11"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="44" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="112" y="7" width="259" height="14"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ARTPLOT - SERV. DE ARQUITETURA E IMPRESSÕES TECNICAS ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="29" width="171" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fone : (81) 3461-2543 / 9146-5000 / 9198-6636]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="495" y="29" width="58" height="11"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[br.com.tg.gui.util.CalendarFormatter.formatDate(java.util.Calendar.getInstance())]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="9" y="7" width="91" height="33"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="112" y="20" width="152" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[R. Sá e Souza N° 878 - SL 1801 TERREO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="437" y="7" width="118" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[email : arquivos@artplot.com.br]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="31">
+			<staticText>
+				<reportElement x="0" y="0" width="58" height="14"/>
+				<textElement/>
+				<text><![CDATA[Ordenação:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="58" y="0" width="259" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ordenacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="32" y="16" width="285" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{filtros}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="16" width="32" height="14">
+					<printWhenExpression><![CDATA[!$P{filtros}.equals( "" )]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Filtros:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="44" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="0" width="360" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="404" y="0" width="51" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Unidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="100" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="44" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="0" width="360" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="0" width="51" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{unidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[br.com.tg.util.Validador.inserirVirgula($F{valor})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="404" y="8" width="87" height="13"/>
+				<textElement/>
+				<text><![CDATA[Total de Plotagens:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="3" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="495" y="8" width="60" height="13"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{totalPlotagens}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

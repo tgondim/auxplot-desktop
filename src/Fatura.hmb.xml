@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="br.com.tg.entidades.Fatura" table="FATURA" lazy="false">
+		<id name="id" column="ID" type="java.lang.Integer" />
+
+		<many-to-one name="pessoaPai" column="PESSOA_ID"
+			class="br.com.tg.entidades.Pessoa" cascade="none" update="false"
+			lazy="false" />
+
+		<many-to-one name="statusFatura" column="STATUS_FATURA_ID"
+			class="br.com.tg.entidades.StatusFatura" cascade="none"
+			update="true" lazy="false" />
+		
+	    <set name="pedidos" table="FATURA_PEDIDOS">
+	        <key column="FATURA_ID"/>
+	        <many-to-many column="PEDIDO_ID" unique="true"
+	            class="br.com.tg.entidades.Pedido"/>
+	    </set>		
+		
+		<property name="valorTotal" column="VALOR_TOTAL" />
+
+		<property name="dataEmissao" column="DATA_EMISSAO" update="true"/>
+		<property name="dataVencimento" column="DATA_VENCIMENTO" update="true"/>
+		
+		<property name="projeto" column="PROJETO" />
+		<property name="notaFiscal" column="NOTA_FISCAL" />
+		
+		<property name="dataCadastro" column="DATA_CADASTRO" update="false"/>
+
+		<many-to-one name="usuarioCadastro" column="USUARIO_CADASTRO_ID"
+			class="br.com.tg.entidades.Usuario" cascade="none" update="false"
+			lazy="false" />
+
+		<property name="dataAlteracao" column="DATA_ALTERACAO" />
+
+		<many-to-one name="usuarioAlteracao" column="USUARIO_ALTERACAO_ID"
+			class="br.com.tg.entidades.Usuario" cascade="none" update="true"
+			lazy="false" />
+	</class>
+</hibernate-mapping>  

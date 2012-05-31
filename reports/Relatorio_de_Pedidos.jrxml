@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatório de Pedidos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="totalPedidos" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="totalValorPedidos" class="java.lang.Float" isForPrompting="false"/>
+	<parameter name="ordenacao" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="filtros" class="java.lang.String" isForPrompting="false"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="pessoaPai" class="java.lang.String"/>
+	<field name="nomeProjeto" class="java.lang.String"/>
+	<field name="statusPedido" class="java.lang.String"/>
+	<field name="dataEmissao" class="java.util.Calendar"/>
+	<field name="valorTotal" class="java.lang.Float"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="475" y="28" width="20" height="11"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="43" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="112" y="6" width="259" height="14"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ARTPLOT - SERV. DE ARQUITETURA E IMPRESSÕES TECNICAS ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="28" width="171" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fone : (81) 3461-2543 / 9146-5000 / 9198-6636]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="495" y="28" width="58" height="11"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[br.com.tg.gui.util.CalendarFormatter.formatDate(java.util.Calendar.getInstance())]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="9" y="6" width="91" height="33"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="112" y="19" width="152" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[R. Sá e Souza N° 878 - SL 1801 TERREO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="437" y="6" width="118" height="11"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[email : arquivos@artplot.com.br]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="32" y="16" width="521" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{filtros}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="58" height="14"/>
+				<textElement/>
+				<text><![CDATA[Ordenação:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="16" width="32" height="14">
+					<printWhenExpression><![CDATA[!$P{filtros}.equals( "" )]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Filtros:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="58" y="0" width="495" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ordenacao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="32" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="0" width="175" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="207" y="0" width="144" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Projeto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="0" width="54" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="0" width="80" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Total R$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="0" width="70" height="14"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Emissão]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="32" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="32" y="0" width="175" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pessoaPai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="0" width="144" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nomeProjeto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="351" y="0" width="54" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{statusPedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="0" width="70" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[br.com.tg.gui.util.CalendarFormatter.formatDate($F{dataEmissao})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="0" width="80" height="14"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[br.com.tg.util.Validador.inserirVirgula($F{valorTotal})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="28" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="3" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="388" y="12" width="63" height="13"/>
+				<textElement/>
+				<text><![CDATA[Valor Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="12" width="100" height="13"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA['R$ ' + br.com.tg.util.Validador.inserirVirgula($P{totalValorPedidos})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="12" width="89" height="13"/>
+				<textElement/>
+				<text><![CDATA[Total de Pedidos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="89" y="12" width="56" height="13"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{totalPedidos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
