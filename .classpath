@@ -23,7 +23,6 @@
 	<classpathentry kind="lib" path="lib/javassist-3.9.0.GA.jar"/>
 	<classpathentry kind="lib" path="lib/jaxb-api-2.2.jar"/>
 	<classpathentry kind="lib" path="lib/jaxb-impl-2.1.12.jar"/>
-	<classpathentry kind="lib" path="lib/jaybird-full-2.2.0.jar"/>
 	<classpathentry kind="lib" path="lib/jta-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.14.jar"/>
 	<classpathentry kind="lib" path="lib/mini-j2ee.jar"/>
@@ -33,5 +32,6 @@
 	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.5.6.jar"/>
 	<classpathentry kind="lib" path="lib/swarmcache-1.0RC2.jar"/>
 	<classpathentry kind="lib" path="lib/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.30-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

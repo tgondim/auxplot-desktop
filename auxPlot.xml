@@ -6,81 +6,81 @@
         <jar destfile="C:/auxPlot/auxPlot.jar">
             <manifest>
                 <attribute name="Main-Class" value="br.com.tg.gui.auxPlot"/>
-                <attribute name="Class-Path" value=". lib/antlr-2.7.6.jar lib/c3p0-0.9.1.jar lib/cglib-2.2.jar lib/commons-beanutils-1.8.2.jar lib/commons-collections-3.1.jar lib/commons-collections-3.2.1.jar lib/commons-digester-1.7.jar lib/commons-javaflow-20060411.jar lib/commons-logging-1.1.jar lib/ehcache-1.5.0.jar lib/groovy-all-1.5.5.jar lib/hibernate-jpa-2.0-api-1.0.0.Final.jar lib/hibernate-validator-4.1.0.Final.jar lib/hibernate3.jar lib/iText-2.1.7.jar lib/jaas.jar lib/jasperreports-3.7.4.jar lib/javassist-3.9.0.GA.jar lib/jaxb-api-2.2.jar lib/jaxb-impl-2.1.12.jar lib/jaybird-full-2.2.0.jar lib/jta-1.1.jar lib/log4j-1.2.14.jar lib/mini-j2ee.jar lib/oscache-2.1.jar lib/proxool-0.8.3.jar lib/slf4j-api-1.5.6.jar lib/swarmcache-1.0RC2.jar lib/validation-api-1.0.0.GA.jar lib/dom4j-1.6.1.jar lib/slf4j-log4j12-1.5.6.jar"/>
+                <attribute name="Class-Path" value=". lib/antlr-2.7.6.jar lib/c3p0-0.9.1.jar lib/cglib-2.2.jar lib/commons-beanutils-1.8.2.jar lib/commons-collections-3.1.jar lib/commons-collections-3.2.1.jar lib/commons-digester-1.7.jar lib/commons-javaflow-20060411.jar lib/commons-logging-1.1.jar lib/ehcache-1.5.0.jar lib/groovy-all-1.5.5.jar lib/hibernate-jpa-2.0-api-1.0.0.Final.jar lib/hibernate-validator-4.1.0.Final.jar lib/hibernate3.jar lib/iText-2.1.7.jar lib/jaas.jar lib/jasperreports-3.7.4.jar lib/javassist-3.9.0.GA.jar lib/jaxb-api-2.2.jar lib/jaxb-impl-2.1.12.jar lib/mysql-connector-java-5.1.30-bin.jar lib/jta-1.1.jar lib/log4j-1.2.14.jar lib/mini-j2ee.jar lib/oscache-2.1.jar lib/proxool-0.8.3.jar lib/slf4j-api-1.5.6.jar lib/swarmcache-1.0RC2.jar lib/validation-api-1.0.0.GA.jar lib/dom4j-1.6.1.jar lib/slf4j-log4j12-1.5.6.jar"/>
             </manifest>
-            <fileset dir="C:/Tiago/EclipseWorkspace/auxPlot/bin"/>
+            <fileset dir="./bin"/>
         </jar>
         <delete dir="C:/auxPlot/lib"/>
         <mkdir dir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/antlr-2.7.6.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/c3p0-0.9.1.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/cglib-2.2.jar" todir="C:/auxPlot/lib"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/commons-beanutils-1.8.2.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/commons-collections-3.1.jar" todir="C:/auxPlot/lib"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/commons-collections-3.2.1.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/commons-digester-1.7.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/commons-javaflow-20060411.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/commons-logging-1.1.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/dom4j-1.6.1.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/ehcache-1.5.0.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/groovy-all-1.5.5.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/hibernate-jpa-2.0-api-1.0.0.Final.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/hibernate-validator-4.1.0.Final.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/hibernate3.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/iText-2.1.7.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/jaas.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/jasperreports-3.7.4.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/javassist-3.9.0.GA.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/jaxb-api-2.2.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/jaxb-impl-2.1.12.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/jaybird-full-2.2.0.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/jta-1.1.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/log4j-1.2.14.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/mini-j2ee.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/oscache-2.1.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/proxool-0.8.3.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/slf4j-api-1.5.6.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/slf4j-log4j12-1.5.6.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/swarmcache-1.0RC2.jar" todir="C:/auxPlot/lib"/>
-        <copy file="C:/Tiago/EclipseWorkspace/auxPlot/lib/validation-api-1.0.0.GA.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/antlr-2.7.6.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/c3p0-0.9.1.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/cglib-2.2.jar" todir="C:/auxPlot/lib"/>
+    	<copy file="./lib/commons-beanutils-1.8.2.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/commons-collections-3.1.jar" todir="C:/auxPlot/lib"/>
+    	<copy file="./lib/commons-collections-3.2.1.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/commons-digester-1.7.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/commons-javaflow-20060411.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/commons-logging-1.1.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/dom4j-1.6.1.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/ehcache-1.5.0.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/groovy-all-1.5.5.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/hibernate-jpa-2.0-api-1.0.0.Final.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/hibernate-validator-4.1.0.Final.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/hibernate3.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/iText-2.1.7.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/jaas.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/jasperreports-3.7.4.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/javassist-3.9.0.GA.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/jaxb-api-2.2.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/jaxb-impl-2.1.12.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/mysql-connector-java-5.1.30-bin.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/jta-1.1.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/log4j-1.2.14.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/mini-j2ee.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/oscache-2.1.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/proxool-0.8.3.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/slf4j-api-1.5.6.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/slf4j-log4j12-1.5.6.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/swarmcache-1.0RC2.jar" todir="C:/auxPlot/lib"/>
+        <copy file="./lib/validation-api-1.0.0.GA.jar" todir="C:/auxPlot/lib"/>
 
         <delete dir="C:/auxPlot/reports"/>
         <mkdir dir="C:/auxPlot/reports"/>    	
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/reports/FaturaPedidos.jasper" todir="C:/auxPlot/reports"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/reports/FaturaPedidos_subreport.jasper" todir="C:/auxPlot/reports"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/reports/Pedido.jasper" todir="C:/auxPlot/reports"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/reports/Pedido_subreport.jasper" todir="C:/auxPlot/reports"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/reports/Relatorio_de_Pessoas.jasper" todir="C:/auxPlot/reports"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/reports/Relatorio_de_Plotagens.jasper" todir="C:/auxPlot/reports"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/reports/Relatorio_de_Pedidos.jasper" todir="C:/auxPlot/reports"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/reports/Relatorio_de_Faturas.jasper" todir="C:/auxPlot/reports"/>
+    	<copy file="./reports/FaturaPedidos.jasper" todir="C:/auxPlot/reports"/>
+    	<copy file="./reports/FaturaPedidos_subreport.jasper" todir="C:/auxPlot/reports"/>
+    	<copy file="./reports/Pedido.jasper" todir="C:/auxPlot/reports"/>
+    	<copy file="./reports/Pedido_subreport.jasper" todir="C:/auxPlot/reports"/>
+    	<copy file="./reports/Relatorio_de_Pessoas.jasper" todir="C:/auxPlot/reports"/>
+    	<copy file="./reports/Relatorio_de_Plotagens.jasper" todir="C:/auxPlot/reports"/>
+    	<copy file="./reports/Relatorio_de_Pedidos.jasper" todir="C:/auxPlot/reports"/>
+    	<copy file="./reports/Relatorio_de_Faturas.jasper" todir="C:/auxPlot/reports"/>
     	
         <delete dir="C:/auxPlot/resources"/>
         <mkdir dir="C:/auxPlot/resources"/>    	
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/adicionar.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/artPlot.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/artPlotIcon.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/buscar.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/cancelar.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/confirmar.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/editar.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/imprimir.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/limpar.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/LogoArtPlot1.jpg" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/LogoArtPlot2.jpg" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/navegarAbaixo.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/navegarAcima.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/pedido.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/pessoa.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/plotagem.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/recicle.jpg" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/remover.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/sair.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/resources/salvar.png" todir="C:/auxPlot/resources"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/auxPlotLimpo.fdb" tofile="C:/auxPlot/auxPlot.fdb"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/auxPlot.properties" todir="C:/auxPlot"/>
+    	<copy file="./resources/adicionar.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/artPlot.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/artPlotIcon.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/buscar.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/cancelar.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/confirmar.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/editar.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/imprimir.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/limpar.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/LogoArtPlot1.jpg" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/LogoArtPlot2.jpg" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/navegarAbaixo.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/navegarAcima.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/pedido.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/pessoa.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/plotagem.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/recicle.jpg" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/remover.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/sair.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./resources/salvar.png" todir="C:/auxPlot/resources"/>
+    	<copy file="./auxPlotLimpo.fdb" tofile="C:/auxPlot/auxPlot.fdb"/>
+    	<copy file="./auxPlot.properties" todir="C:/auxPlot"/>
 
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/auxPlot.ico" todir="C:/auxPlot"/>
-    	<copy file="C:/Tiago/EclipseWorkspace/auxPlot/auxPlot.lnk" todir="C:/auxPlot"/>
+    	<copy file="./auxPlot.ico" todir="C:/auxPlot"/>
+    	<copy file="./auxPlot.lnk" todir="C:/auxPlot"/>
     </target>
 </project>
