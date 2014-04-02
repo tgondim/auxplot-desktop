@@ -270,6 +270,15 @@ public class TelaCadastroPedidos extends Tela {
 			Object[] restr = { "statusPedido", getJcbStatusPedido().getSelectedItem(), "eq" };
 			restricoes.add(restr);
 		}
+		try {
+			Object[] restr = { "dataEmissao", "between", 
+					Conversor.stringToCalendar("01/01/" + Calendar.getInstance().get(Calendar.YEAR)),
+					Conversor.stringToCalendar("31/12/" + Calendar.getInstance().get(Calendar.YEAR)) };
+			restricoes.add(restr);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return restricoes;
 	}
 	
