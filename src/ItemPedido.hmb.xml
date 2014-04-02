@@ -6,6 +6,7 @@ PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 <hibernate-mapping>
 	<class name="br.com.tg.entidades.ItemPedido" table="ITEM_PEDIDO" lazy="false">
 		<id name="id" column="ID" >
+			<generator class="native"/>
 <!--			<generator class="native">-->
 <!--				<param name="sequence">GEN_ITEM_PEDIDO_ID</param>-->
 <!--			</generator>-->

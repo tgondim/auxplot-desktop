@@ -5,7 +5,9 @@ PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 
 <hibernate-mapping>
 	<class name="br.com.tg.entidades.Pedido" table="PEDIDO" lazy="false">
-		<id name="id" column="ID" type="java.lang.Integer" />
+		<id name="id" column="ID" type="java.lang.Integer" >
+			<generator class="native"/>
+		</id>
 		
 		<set name="itensPedido" lazy="false" table="PEDIDO_ITEM_PEDIDO" cascade="all,delete-orphan">
 			<key column="PEDIDO_ID" />

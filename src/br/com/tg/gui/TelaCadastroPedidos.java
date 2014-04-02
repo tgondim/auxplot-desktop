@@ -344,7 +344,7 @@ public class TelaCadastroPedidos extends Tela {
 			getPedidoSelecionado().setId(Integer.parseInt(getJtfId().getText().trim()));
 		} else {
 			try {
-				getPedidoSelecionado().setId(Fachada.obterInstancia().getGenerator("GEN_PEDIDO_ID"));
+				//getPedidoSelecionado().setId(Fachada.obterInstancia().getGenerator("GEN_PEDIDO_ID"));
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(this, 
 						"Ocorreu um erro inesperado.\n" 
@@ -378,7 +378,7 @@ public class TelaCadastroPedidos extends Tela {
 		Set<ItemPedido> itensPedido = getItemPedidoTableModel().getList();
 		for (ItemPedido ip : itensPedido) {
 			try {
-				ip.setId(Fachada.obterInstancia().getGenerator("GEN_ITEM_PEDIDO_ID"));
+				//ip.setId(Fachada.obterInstancia().getGenerator("GEN_ITEM_PEDIDO_ID"));
 			}  catch (Exception e2) {
 				JOptionPane.showMessageDialog(this, 
 						"Ocorreu um erro inesperado.\n" 
